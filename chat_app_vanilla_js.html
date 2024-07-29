@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="chat_app_vanilla_js.css" />
+    <title>Chat app</title>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2 class="chat-header-name">Unknown</h2>
+        <h2 class=".chat-header-status-bar">
+          <div class="clock">00:00</div>
+        </h2>
+      </div>
+      <div class="chat-messages">
+        <!-- ----------------------------
+           Here is just some example message that laters goes in the "chat-messeges":
+           ------------------------------  -->
+        <!-- <div class="message blue-bg">
+              <div class="message-sender">The NPC</div>
+              <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui amet, nihil accusantium aperiam reprehenderit nam, </div>
+              <div class="message-timestamp">10:30</div>
+            </div> -->
+        <!-- <div class="message grey-bg">
+              <div class="message-sender">Player</div>
+              <div class="message-text">
+               Eveniet minima soluta hic beatae alias dignissimos deserunt, amet ipsa odit. Sequi optio ut unde amet quisquam, voluptates debitis  sint earum ducimus.
+             </div>
+              <div class="message-timestamp">10:35</div>
+            </div> -->
+      </div>
+
+      <form class="chat-input-form hidden">
+        <button class="btn-option" id="option0"></button>
+        <button class="btn-option" id="option1"></button>
+        <button class="btn-option" id="option2"></button>
+      </form>
+
+      <form class="submit-name-form">
+        <input
+          class="input-user-name"
+          id="text-input"
+          type="text"
+          placeholder="Type here..."
+        />
+        <button class="btn-enter-name">Send</button>
+      </form>
+    </div>
+
+    <audio id="textingsound" src="textingsound.mp3"></audio>
+    <audio id="bloop-2" src="bloop-2.mp3"></audio>
+    <audio id="happy-pop-2" src="happy-pop-2.mp3"></audio>
+    <audio id="tic-tac" src="tic-tac.mp3"></audio>
+    <script src="functions.js"></script>
+    <script src="main.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
