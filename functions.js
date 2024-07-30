@@ -158,7 +158,7 @@ function extractUsername(sentence) {
 const scaryFace = function () {
   chatMessages.innerHTML += `<div class="message blue-bg dark">
   <div class="message-sender">Demon</div>
-  <div class="message-text"> <img src="scary-face.jpg" alt=""> YOU LOSE </div>
+  <div class="message-text"> <img src="images/scary-face.jpg" alt=""> YOU LOSE </div>
   <div class="message-timestamp">10:30</div>
 </div>`;
   chatMessages.innerHTML += `<div class="message blue-bg dark">

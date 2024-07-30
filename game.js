@@ -203,7 +203,7 @@ const story = {
     npcMessage(
       "Seems like an odd place to have a house but the house is even weirder. Or it’s actually really nice. Like an well-kept 1800-house with two stories. But it doesn't all fit the… shady neighborhood."
     );
-    npcMessage(`<img src="entre.png" alt="">`),
+    npcMessage(`<img src="images/entre.png" alt="">`),
       npcMessageAndSetOptText(
         "Anyway, let’s knock?",
         [
@@ -272,7 +272,7 @@ const story = {
   part6: function () {
     npcMessage("All right, here we are.");
     npcMessage("What do you think?");
-    npcMessageAndSetOptText(`<img src="house.png" alt="">`, [
+    npcMessageAndSetOptText(`<img src="images/house.png" alt="">`, [
       "Be careful!",
       "Wouldn't enter it for even a million €",
       "Looks great, easy money!",
@@ -309,16 +309,16 @@ const story = {
   },
 
   part8: function () {
-    npcMessage(`<img src="inside-soffa-room.png" alt="">`, undefined, 0);
+    npcMessage(`<img src="images/inside-soffa-room.png" alt="">`, undefined, 0);
     npcMessage("Room upstairs", undefined, 0);
     npcMessage(
-      `<img src="grandfather-clock-room.jpeg" alt="">`,
+      `<img src="images/grandfather-clock-room.jpeg" alt="">`,
       undefined,
       4000
     );
     npcMessage("Room downstairs", undefined, 0);
     npcMessage(
-      `<img src="door-from-inside-house.jpeg" alt="">`,
+      `<img src="images/door-from-inside-house.jpeg" alt="">`,
       undefined,
       4000
     );
