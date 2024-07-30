@@ -1,5 +1,4 @@
 body {
-  height: 100vh;
   background: linear-gradient(
     45deg,
     rgb(45, 39, 161) 0%,
@@ -169,7 +168,6 @@ FIXME: Remove this commented code later
 }
 
 .submit-name-form {
-  margin-top: 1%;
   width: 100%;
   height: 25%;
   display: flex;
@@ -243,4 +241,86 @@ img {
 .bright {
   color: black;
   background-color: rgb(255, 255, 255);
+}
+
+@media (min-width: 670px) {
+  body {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 670px) {
+  body {
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+  }
+
+  .chat-container {
+    background: #15202b;
+    background: linear-gradient(180deg, #15202b 70%, rgb(22, 118, 138) 0%);
+  }
+
+  .chat-container {
+    height: 95vh;
+    width: 85vw;
+  }
+
+  .chat-input-form {
+    background-color: rgb(22, 118, 138);
+  }
+
+  .btn-option {
+    height: 7vh;
+  }
+
+  .all {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  body {
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+  }
+
+  .chat-messages {
+    height: 72%;
+  }
+
+  .chat-container {
+    background: #15202b;
+    background: linear-gradient(180deg, #15202b 76.2%, rgb(22, 118, 138) 0%);
+  }
+
+  .btn-option {
+    height: 5.7vh;
+  }
+
+  .btn-enter-name {
+    width: 80px;
+  }
+}
+
+@media (max-height: 750px) {
+  .chat-messages {
+    height: 71%;
+  }
+
+  .chat-container {
+    background: #15202b;
+    background: linear-gradient(180deg, #15202b 76.2%, rgb(22, 118, 138) 0%);
+  }
+
+  .btn-option {
+    height: 5.2vh;
+    font-size: 0.9rem;
+  }
+
+  .btn-enter-name {
+    width: 80px;
+  }
 }
