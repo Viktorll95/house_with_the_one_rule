@@ -1,4 +1,6 @@
 body {
+  height: 100vh;
+  width: 100vw;
   background: linear-gradient(
     45deg,
     rgb(45, 39, 161) 0%,
@@ -9,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -33,13 +36,20 @@ button:active {
 }
 
 .chat-input-form {
-  margin-top: 3px;
   display: flex;
   flex-direction: column;
+  background-color: rgb(22, 118, 138);
+  margin: auto;
+  box-sizing: border-box;
+  width: 37.5em;
+  max-width: 37.5em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  padding: 0.5em 1.25em;
 }
 
 .btn-option {
-  height: 38px;
+  height: 25%;
 
   border: none;
   padding: 0.625em;
@@ -92,14 +102,10 @@ FIXME: Remove this commented code later
 
 .chat-container {
   background: #15202b;
-  background: linear-gradient(180deg, #15202b 71.2%, rgb(22, 118, 138) 0%);
   font-family: sans-serif;
   border-radius: 0.5em;
-  padding: 0.5em 1.25em;
-  margin: auto;
   width: 37.5em;
   max-width: 37.5em;
-  height: 35.5em;
   box-shadow: 0 0 0.5em 0.1em #c3c3c333;
 }
 
@@ -107,6 +113,7 @@ FIXME: Remove this commented code later
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 0.2em 1.25em;
 }
 
 .chat-header h2 {
@@ -121,6 +128,7 @@ FIXME: Remove this commented code later
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  padding: 0.5em 1.25em;
 }
 
 .chat-messages::-webkit-scrollbar {
@@ -167,15 +175,25 @@ FIXME: Remove this commented code later
   margin: 2em auto;
 }
 
+.form-background {
+  width: 37.5em;
+  height: 10em;
+  background-color: rgb(22, 118, 138);
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  box-sizing: border-box;
+}
+
 .submit-name-form {
-  width: 100%;
-  height: 25%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1%;
+  padding: 0.5em 0.25em;
+  height: 100%;
 }
+
 .input-user-name {
   width: 100%;
   height: 50%;
@@ -196,8 +214,6 @@ FIXME: Remove this commented code later
 .hidden {
   opacity: 0;
   transition: 1s;
-  /* For height transition */
-  height: 0;
   overflow: hidden;
   transition: opacity 1s ease-in-out, height 1s ease-in-out;
   cursor: default;
@@ -211,6 +227,10 @@ FIXME: Remove this commented code later
 .hidden:active {
   background-color: transparent;
   transition: 2s;
+}
+
+.removed {
+  display: none;
 }
 
 .visible {
@@ -241,120 +261,4 @@ img {
 .bright {
   color: black;
   background-color: rgb(255, 255, 255);
-}
-
-@media (min-width: 670px) {
-  body {
-    height: 100vh;
-  }
-
-  .chat-container {
-    background: #15202b;
-    background: linear-gradient(180deg, #15202b 71.8%, rgb(22, 118, 138) 0%);
-  }
-}
-
-@media (max-width: 670px) {
-  body {
-    height: 100vh;
-    width: 100vw;
-    margin: auto;
-  }
-
-  .chat-container {
-    background: #15202b;
-    background: linear-gradient(180deg, #15202b 70%, rgb(22, 118, 138) 0%);
-  }
-
-  .chat-container {
-    height: 95vh;
-    width: 85vw;
-  }
-
-  .chat-input-form {
-    background-color: rgb(22, 118, 138);
-  }
-
-  .btn-option {
-    height: 7vh;
-  }
-
-  .all {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 450px) {
-  body {
-    height: 100vh;
-    width: 100vw;
-    margin: auto;
-  }
-
-  .chat-messages {
-    height: 72%;
-  }
-
-  .chat-container {
-    background: #15202b;
-    background: linear-gradient(180deg, #15202b 76.2%, rgb(22, 118, 138) 0%);
-  }
-
-  .btn-option {
-    height: 5.7vh;
-  }
-
-  .btn-enter-name {
-    width: 80px;
-  }
-}
-
-@media (max-height: 800px) {
-  .chat-messages {
-    height: 71%;
-  }
-
-  .chat-container {
-    background: #15202b;
-    background: linear-gradient(180deg, #15202b 76.2%, rgb(22, 118, 138) 0%);
-  }
-
-  .btn-option {
-    height: 5.2vh;
-    font-size: 0.9rem;
-  }
-
-  .btn-enter-name {
-    width: 80px;
-  }
-}
-
-@media(min-width: 1400px){
-  
-  .chat-header h2{
-    font-size: 1.4em;
-  }
-
-  .chat-container{
-    height: 55em;
-  }
-
-  .chat-messages {
-    height: 39.17em;
-  }
-
-  .message{
-    font-size: 1.2em;
-  }
-
-  .chat-container {
-    background: #15202b;
-    background: linear-gradient(180deg, #15202b 76.2%, rgb(22, 118, 138) 0%);
-  }
-
-  .btn-option {
-    height: 55px;
-    font-size: 1rem;
-  }
 }
