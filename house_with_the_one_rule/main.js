@@ -38,6 +38,8 @@ const createChatMessagesElement = (message) => `
 <div class="message-timestamp">${message.timestamp}</div>
 </div>`;
 
+
+
 const sendMessage = (text, sender = playerName, npc) => {
   const timestamp = clock;
 
@@ -51,7 +53,16 @@ const sendMessage = (text, sender = playerName, npc) => {
   chatMessages.innerHTML += createChatMessagesElement(message);
   // Scroll the new message into view
   chatMessages.lastElementChild.scrollIntoView({ behavior: "smooth" });
+
+
 };
+
+chatHeaderName.addEventListener('click',function(){
+  chatMessages.scrollTop = chatMessages.lastElementChild;
+  console.log("fdsfsaf");
+  chatMessages.lastElementChild.scrollIntoView({ behavior: "smooth" });
+})
+
 
 const btnOpHide = function () {
   btnOptionList.forEach((buttonEl) => buttonEl.classList.add("hidden"));
@@ -212,7 +223,7 @@ const commentAfterOption = function () {
 btnOptionList.forEach((btnOption, i) =>
   btnOption.addEventListener("click", (e) => {
     e.preventDefault();
-    if (npcTextsInProgress === 0) {
+    if (npcTextsInProgress === 0 && currTextDelayTotal === 0) {
       happyPop.play();
       sendMessage(btnOption.textContent, playerName, btnOption.id);
       opt.userChoice.forEach((userChoice, i) => {
@@ -242,8 +253,10 @@ submitNameForm.addEventListener("submit", (e) => {
 
 const replaceUserInputs = function () {
   submitNameForm.classList.add("hidden");
+  submitNameForm.classList.add("removed");
   setTimeout(() => {
     chatInputForm.classList.add("visible");
+    chatInputForm.classList.remove("removed");
     setTimeout(() => chatInputForm.classList.remove("hidden"), 500);
   }, 1000);
 };
