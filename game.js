@@ -4,7 +4,7 @@
 // The game itself:
 
 const startStory = function () {
-  story.part1();
+  pre.part1();
 };
 
 const askToRestart = function () {
@@ -14,7 +14,7 @@ const askToRestart = function () {
   }, 1000);
 };
 
-const story = {
+const pre = {
   part1: function () {
     npcName = "Anna";
     npcMessage(
@@ -28,7 +28,7 @@ const story = {
       ["Of course", "Okay", "Not sure"],
       2000
     );
-    setOpFn([story.part2]);
+    setOpFn([pre.part2, pre.part2, pre.part2]);
     setOpNpcCom([
       "I'm so glad to hear that",
       "Thanks alot",
@@ -37,16 +37,124 @@ const story = {
   },
 
   part2: function () {
-    npcMessage("I found a house sitting job for some good money.");
+    npcMessage("First some background");
+    npcMessage(
+      `So as I said, I’m a student and don’t have much money so naturally I needed to find work.`
+    );
+    npcMessage(
+      `I’ve worked as a barista and as a fast-food staff, and it worked for the time being`
+    );
+    npcMessage(
+      `But running back and forth, breaking my back for (some) screaming customers and coming home smelling like coffee or french fries gets a bit old`
+    );
+    npcMessage(
+      `Especially those days I have to finish assignments later in the evening.`
+    );
+    npcMessage(`Sorry for the bible 😅`);
     npcMessageAndSetOptText(
-      "Basically I just need sit in a house, watching it all throughout the night and I get 1000 €! Crazy good right!?",
+      "And now I have actually found a really good gig, and I make decent money too, but there’s a catch",
+      [
+        "What catch?",
+        "Well naturally since we’re texting",
+        "Catch is selling your used socks?",
+      ]
+    );
+    setOpFn([pre.part3, pre.part3, pre.part3]);
+    setOpNpcCom([
+      "Sounds so silly but…",
+      "Mhm",
+      `Ew no ${playerName}, now I know where your head is at`,
+    ]);
+  },
+
+  part3: function () {
+    npcMessageAndSetOptText(
+      "The thing is I do certain tasks for this guy, usually just watching a house. Like just sitting in it.",
+      ["Doesn’t sound too weird", "There must be more?", "Where do I sign up??"]
+    );
+    setOpFn([pre.part4, pre.part4, pre.part4]);
+    setOpNpcCom([
+      "Well yes, and no",
+      "There is",
+      "Haha, we don’t live in the same town. I checked 😉",
+    ]);
+  },
+
+  part4: function () {
+    npcMessage(
+      "So when I watch his houses, because there seem to be a lot, there are almost always some sorts of rules I have to follow."
+    );
+    npcMessage(
+      `Like “If the attic room is closed, you must also close the door to the cellar” or “check for milk in the refrigerator, if there is milk put on the kitchen sink, otherwise, leave it of for the rest of the stay”`
+    );
+    npcMessageAndSetOptText("The last one was actually during my last visit", [
+      "Do you always follow the rules?",
+      "Sounds silly",
+      "I’m guessing you have more work planned?",
+    ]);
+    setOpFn([pre.part5, pre.part5, pre.part5]);
+    setOpNpcCom([
+      "Yes, always.",
+      "Yeah haha, sure does, but I figured I need to follow them anyway",
+      "That’s right!",
+    ]);
+  },
+
+  part5: function () {
+    npcMessage(
+      "The thing is Mr. Whitaker (the guy), does not strike me as a person you want to disobey, and he has always paid me really good money for what seems to be easy work, although there are some strange rules."
+    );
+    npcMessageAndSetOptText(
+      "And more importantly, he has never tried anything weird",
+      [
+        "How did you meet him?",
+        "I’m sensing some red flags here!",
+        "Okay but what’s up this time?",
+      ]
+    );
+    setOpFn([pre.part6, pre.part6, pre.part7]);
+    setOpNpcCom([
+      "He posted a paper on like an notice board in my town. I just read it and called his number and that was it!",
+      "I totally see where you are coming from, but I’ve done this like six times now, and he paid me an all is weel!",
+      `I’ll tell you`,
+    ]);
+  },
+
+  part6: function () {
+    npcMessage(
+      `I’ve only met Whitaker one time, otherwise he usually leaves the keys in the garden or something and tells me where to pick them up from.`
+    );
+    npcMessage(
+      `This time I’m actually going to pick up the keys from one of Whitakers… Friends? Anyway I got some weird rules as per usual`
+    );
+    npcMessageAndSetOptText(
+      `When I pull up on the driveway, I have to honk one time, wait in the car for four minutes and knock on the door eight times.`,
+      ["Got it", "Are you gonna do it?", "Seems stupid this"]
+    ),
+      setOpFn([pre.part7, pre.part7, pre.part7]),
+      setOpNpcCom([
+        "Nice",
+        "Ofc, and you are going to help me! 😀",
+        "Do you think? Also...",
+      ]);
+  },
+
+  part7: function () {
+    npcMessage(
+      "One thing that is out of the ordinary this time is that I’ve actually been ordered to stay over the night, which is my first time staying during nighttime"
+    );
+    npcMessage(
+      "Whitaker expressed how sorry he is that I have to during the night, and sais that I will never have to work at night again"
+    );
+    npcMessageAndSetOptText(
+      "I'm getting paid 1000€ for just this night, good deal right?",
       [
         "Absolutely!",
         "Wow, good money!, But it sounds weird",
         "No, don’t do it",
       ]
     );
-    setOpFn([story.part3, story.part3, story.part2b]);
+    setOpFn([story.part3, story.part3, story.part3]);
     setOpNpcCom([
       "Nice! I knew I got a good feeling from you!",
       "Right? But it seems a little wierd. Anyway it’s only one night and as you said, good money!",
@@ -64,7 +172,7 @@ const story = {
       "To be honest, me too, but if I'm on alert, and you'll help me, I'm sure it will be fine",
       "I told you, 1000 €! A night!",
     ]);
-    setOpFn([story.part3, story.part3, story.part2c]);
+    setOpFn([pre.part3, pre.part3, pre.part2c]);
   },
 
   part2c: function () {
@@ -77,7 +185,7 @@ const story = {
       "It sure is!",
       "Mhm... I see you are quite the character. Anyway...",
     ]);
-    setOpFn([story.part3, story.part3, story.part2d]);
+    setOpFn([pre.part3, pre.part3, pre.part2d]);
   },
 
   part2d: function () {
@@ -91,21 +199,29 @@ const story = {
       "Well argued, okay then I won't",
       "It sure is and you know what? I'll do it",
     ]);
-    setOpFn([story.part2e, story.part2e, story.part3]);
+    setOpFn([pre.part2eQuit, pre.part2eQuit, story.part2eContinue]);
   },
 
-  part2e: function () {
+  part2eContinue() {
+    npcMessage(
+      "There’s just one weird rule. I can't open the door between midnight and 6 AM. No matter what. He was really serious about it. Kind of spooky, right? But hey, rules are rules."
+    );
+    story.part3();
+  },
+
+  part2eQuit: function () {
     npcMessageAndSetOptText("I hope you have a great day then. Bye!", [
       "Bye!",
       "See ya!",
       "Good riddance...",
     ]);
   },
+};
 
+/////////////////////////////////////////////////////////////////////////////////////////
+
+const story = {
   part3: function () {
-    npcMessage(
-      "There’s just one weird rule. I can't open the door between midnight and 6 AM. No matter what. He was really serious about it. Kind of spooky, right? But hey, rules are rules."
-    );
     npcMessage(
       "The place itself is an old, kind of creepy house on the outskirts of town."
     );

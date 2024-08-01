@@ -247,6 +247,11 @@ img {
   body {
     height: 100vh;
   }
+
+  .chat-container {
+    background: #15202b;
+    background: linear-gradient(180deg, #15202b 71.8%, rgb(22, 118, 138) 0%);
+  }
 }
 
 @media (max-width: 670px) {
@@ -305,7 +310,7 @@ img {
   }
 }
 
-@media (max-height: 750px) {
+@media (max-height: 800px) {
   .chat-messages {
     height: 71%;
   }
@@ -322,5 +327,33 @@ img {
 
   .btn-enter-name {
     width: 80px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .chat-header h2 {
+    font-size: 1.4em;
+  }
+
+  .chat-container {
+    height: 55em;
+  }
+
+  .chat-messages {
+    height: 39.17em;
+  }
+
+  .message {
+    font-size: 1.2em;
+  }
+
+  .chat-container {
+    background: #15202b;
+    background: linear-gradient(180deg, #15202b 76.2%, rgb(22, 118, 138) 0%);
+  }
+
+  .btn-option {
+    height: 55px;
+    font-size: 1rem;
   }
 }
