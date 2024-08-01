@@ -25,7 +25,7 @@ textingSound.volume = 0.1;
 const happyPop = document.querySelector("#happy-pop-2");
 happyPop.volume = 0.1;
 const ticTac = document.querySelector("#tic-tac");
-ticTac.volume = 0.2;
+ticTac.volume = 0.3;
 
 let playerName = "Player";
 let npcName = "Unknown";

@@ -144,7 +144,7 @@ const pre = {
       "One thing that is out of the ordinary this time is that I’ve actually been ordered to stay over the night, which is my first time staying during nighttime"
     );
     npcMessage(
-      "Whitaker expressed how sorry he is that I have to during the night, and sais that I will never have to work at night again"
+      "Whitaker expressed how sorry he is that I have to during the night, and says that I will never have to work at night again"
     );
     npcMessageAndSetOptText(
       "I'm getting paid 1000€ for just this night, good deal right?",
@@ -376,12 +376,46 @@ const story = {
         "Haha I'd be lying if I said it feels super great, but we're in this now 😉",
         "😁",
       ],
-      "I will be at the house in about a half hour!"
+      "Oh I almost forgot"
     );
   },
 
-  // FIXME:FIXME:FIXME:
   part5b: function () {
+    npcMessageAndSetOptText("I got a note, must be from Whitaker", [
+      "Probably wierd rules again",
+      "Let's just go",
+      "What does it say?",
+    ]);
+    setOpFn([story.part5c, story.part5c, story.part5cOff]);
+    setOpNpcCom([
+      "Probably",
+      "I think this is worth checking out",
+      "One second...",
+    ]);
+  },
+
+  part5cOff: function () {
+    npcMessageAndSetOptText("Could be those wierd rules", [
+      "Okay, what does it say?",
+      "Well if you must...",
+      "No just skip it, let's go",
+    ]),
+      setOpFn([story.part5c, story.part5c, story.part6]);
+    setOpNpcCom([
+      "I think so too",
+      "Then I really 'must'",
+      "This is pretty dumb, but okay",
+    ]);
+  },
+
+  part5c: function () {
+    npcMessage("Yup, there are some rules");
+    npcMessage("It says: 1, Close all windows and doors");
+  },
+
+  // FIXME:FIXME:FIXME:
+  part5d: function () {
+    npcMessage("I'll get back to you in about half an hour");
     fastForwardClock(`${hours}:${minutes + 29}`, story.part6);
   },
 

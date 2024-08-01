@@ -33,7 +33,6 @@ button:active {
 }
 
 .chat-input-form {
-  margin-top: 3px;
   display: flex;
   flex-direction: column;
 }
