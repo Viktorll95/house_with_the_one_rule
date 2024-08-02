@@ -242,8 +242,10 @@ submitNameForm.addEventListener("submit", (e) => {
 
 const replaceUserInputs = function () {
   submitNameForm.classList.add("hidden");
+  submitNameForm.classList.add("removed");
   setTimeout(() => {
     chatInputForm.classList.add("visible");
+    chatInputForm.classList.remove("removed");
     setTimeout(() => chatInputForm.classList.remove("hidden"), 500);
   }, 1000);
 };
